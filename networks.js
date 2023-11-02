@@ -3,21 +3,12 @@ require("@chainlink/env-enc").config()
 
 const DEFAULT_VERIFICATION_BLOCK_CONFIRMATIONS = 2;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
-const SECOND_PRIVATE_KEY = process.env.SECOND_PRIVATE_KEY;
-
-const accounts = [];
-if (PRIVATE_KEY) {
-  accounts.push(PRIVATE_KEY);
-}
-if (SECOND_PRIVATE_KEY) {
-  accounts.push(SECOND_PRIVATE_KEY);
-}
 
 const networks = {
   ethereumSepolia: {
     gasPrice: undefined,
     nonce: undefined,
-    accounts,
+    accounts: [PRIVATE_KEY],
     verifyApiKey: process.env.ETHERSCAN_API_KEY || "UNSET",
     chainId: 11155111,
     confirmations: DEFAULT_VERIFICATION_BLOCK_CONFIRMATIONS,
@@ -34,7 +25,7 @@ const networks = {
   polygonMumbai: {
     gasPrice: 20_000_000_000,
     nonce: undefined,
-    accounts,
+    accounts: [PRIVATE_KEY],
     verifyApiKey: process.env.POLYGONSCAN_API_KEY || "UNSET",
     chainId: 80001,
     confirmations: DEFAULT_VERIFICATION_BLOCK_CONFIRMATIONS,
@@ -51,7 +42,7 @@ const networks = {
   avalancheFuji: {
     gasPrice: undefined,
     nonce: undefined,
-    accounts,
+    accounts: [PRIVATE_KEY],
     verifyApiKey: process.env.FUJI_SNOWTRACE_API_KEY || "UNSET",
     chainId: 43113,
     confirmations: 2 * DEFAULT_VERIFICATION_BLOCK_CONFIRMATIONS,
@@ -64,17 +55,7 @@ const networks = {
       "https://01.functions-gateway.testnet.chain.link/",
       "https://02.functions-gateway.testnet.chain.link/",
     ],
-  },
-  // localFunctionsTestnet is updated dynamically by scripts/startLocalFunctionsTestnet.js so it should not be modified here
-  localFunctionsTestnet: {
-    url: "http://localhost:8545/",
-    accounts,
-    confirmations: 1,
-    nativeCurrencySymbol: "ETH",
-    linkToken: "0xa0C37a37BEc77B60bbe862F1eAd74DDCBdcaADb0",
-    functionsRouter: "0x10a39d4fA07A58dbD3164c9811790c0dAC6DC1B8",
-    donId: "local-functions-testnet",
-  },
+  }
 };
 
 module.exports = {
