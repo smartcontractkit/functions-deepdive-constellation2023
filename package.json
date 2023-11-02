@@ -1,0 +1,20 @@
+{
+    "name": "sc2023-functions-demo",
+    "author": {"name": "Zubin Pratap"},
+    "scripts": {
+      "listen": "nodemon scripts/06_listen.ts"
+    },
+    "dependencies": {
+      "@chainlink/contracts": "^0.8.0",
+      "@chainlink/env-enc": "^1.0.5",
+      "@chainlink/functions-toolkit": "^0.2.6",
+      "@types/node": "^20.6.2",
+      "dotenv": "^16.3.1",
+      "nodemon": "^3.0.1",
+      "typescript": "^5.2.2"
+    },
+    "devDependencies": {
+      "ts-node": "^10.9.1"
+    }
+  }
+  
