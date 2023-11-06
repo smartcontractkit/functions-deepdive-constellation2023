@@ -16,8 +16,8 @@ const readResponse = async () => {
   const requestId = await functionsConsumer.s_lastRequestId()
   let responseHex = await functionsConsumer.s_lastResponse();
   let errorHex = await functionsConsumer.s_lastError()
+  
   let hexToDecode = responseHex
-
   if (responseHex === "0x") {
     console.log("\nThere was an error. Decoding the error...");
     hexToDecode = errorHex;

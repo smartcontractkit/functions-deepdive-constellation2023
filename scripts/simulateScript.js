@@ -12,7 +12,7 @@ require("@chainlink/env-enc").config();
 
 const simulate = async () => {
   const source = fs
-    .readFileSync(path.resolve(__dirname, "./source.js"))
+    .readFileSync(path.resolve(__dirname, "../source.js"))
     .toString();
 
   const prompt = "Describe what a blockchain is in 15 words or less";
@@ -34,7 +34,7 @@ const simulate = async () => {
     });
 
   if (errorString) {
-    console.log("Error :", errorString);
+    console.log("Error from source :", errorString);
   }
   if (responseBytesHexstring) {
     console.log(
