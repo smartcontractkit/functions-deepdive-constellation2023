@@ -1,10 +1,12 @@
 {
-    "name": "sc2023-functions-demo",
-    "author": {"name": "Zubin Pratap"},
-    "scripts": {
+  "name": "sc2023-functions-demo",
+  "author": {
+      "name": "Zubin Pratap"
+  },
+  "scripts": {
       "listen": "nodemon scripts/06_listen.ts"
-    },
-    "dependencies": {
+  },
+  "dependencies": {
       "@chainlink/contracts": "^0.8.0",
       "@chainlink/env-enc": "^1.0.5",
       "@chainlink/functions-toolkit": "^0.2.6",
@@ -12,9 +14,11 @@
       "dotenv": "^16.3.1",
       "nodemon": "^3.0.1",
       "typescript": "^5.2.2"
-    },
-    "devDependencies": {
+  },
+  "devDependencies": {
+      "@nomicfoundation/hardhat-verify": "^2.0.0",
+      "@nomiclabs/hardhat-etherscan": "^3.1.7",
+      "hardhat": "^2.19.0",
       "ts-node": "^10.9.1"
-    }
   }
-  
+}
