@@ -5,7 +5,7 @@ const { signer } = require("../connection");
 const { networks } = require("../networks");
 
 const NETWORK = "polygonMumbai";
-const consumerAddress = "0x5048689f7c45b15978165c8fe02e79d39f548daf"; // TODO @dev get this from step 01
+const consumerAddress = "0x35c14267Ea142bCf1e784A0CdeF83dEcc73988BF"; // TODO @dev get this from step 01
 const LINK_AMOUNT = "3.3";
 
 const functionsRouterAddress = networks[NETWORK].functionsRouter;

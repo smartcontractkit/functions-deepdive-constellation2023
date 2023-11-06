@@ -29,7 +29,10 @@ const encryptAndUploadSecrets = async () => {
   const secrets = { apiKey: process.env.GPT_API_KEY };
 
   // Encrypt secrets & upload them to the DON.
-  console.log("\nEncrypting secrets...", secrets);
+  console.log(
+    "\nEncrypting secrets...",
+    JSON.stringify(secrets).slice(0,18) + "******}"
+  );
   const encryptedSecretsObj = await secretsManager.encryptSecrets(secrets);
 
   // lets understand what this object looks like!

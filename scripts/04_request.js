@@ -9,9 +9,9 @@ const { abi } = require("../contracts/abi/FunctionsConsumer.json");
 
 // require('dotenv').config()
 
-const consumerAddress = "0xA360Eb64E7102890D03F257332082ED446271Bfc"; // TODO @dev
+const consumerAddress = "0x35c14267Ea142bCf1e784A0CdeF83dEcc73988BF"; // TODO @dev
 const encryptedSecretsReference =
-  "0xa266736c6f744964006776657273696f6e1a6545d679"; // TODO @dev get this from previous step
+  "0xa266736c6f744964006776657273696f6e1a65486dd4"; // TODO @dev get this from previous step
 const subscriptionId = "151"; // TODO @dev
 
 const sendRequest = async () => {

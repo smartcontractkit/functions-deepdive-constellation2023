@@ -4,7 +4,7 @@ const { Contract } = require("ethers");
 const { signer } = require("../connection.js");
 const { abi } = require("../contracts/abi/FunctionsConsumer.json");
 
-const consumerAddress = "0xA360Eb64E7102890D03F257332082ED446271Bfc"; // TODO @dev get this from step 01
+const consumerAddress = "0x35c14267Ea142bCf1e784A0CdeF83dEcc73988BF"; // TODO @dev get this from step 01
 
 const readResponse = async () => {
   if (!consumerAddress) {
