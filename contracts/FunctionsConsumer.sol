@@ -48,7 +48,7 @@ contract FunctionsConsumer is FunctionsClient, ConfirmedOwner {
     uint64 subscriptionId,
     uint32 callbackGasLimit
   ) external onlyOwner {
-    FunctionsRequest.Request memory req;
+    FunctionsRequest.Request memory req; // Struct API reference: https://docs.chain.link/chainlink-functions/api-reference/functions-request
     req.initializeRequest(FunctionsRequest.Location.Inline, FunctionsRequest.CodeLanguage.JavaScript, source);
     req.secretsLocation = secretsLocation;
     req.encryptedSecretsReference = encryptedSecretsReference;
