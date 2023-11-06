@@ -38,23 +38,6 @@ const networks = {
       "https://01.functions-gateway.testnet.chain.link/",
       "https://02.functions-gateway.testnet.chain.link/",
     ],
-  },
-  avalancheFuji: {
-    gasPrice: undefined,
-    nonce: undefined,
-    accounts: [PRIVATE_KEY],
-    verifyApiKey: process.env.FUJI_SNOWTRACE_API_KEY || "UNSET",
-    chainId: 43113,
-    confirmations: 2 * DEFAULT_VERIFICATION_BLOCK_CONFIRMATIONS,
-    nativeCurrencySymbol: "AVAX",
-    linkToken: "0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846",
-    linkPriceFeed: "0x79c91fd4F8b3DaBEe17d286EB11cEE4D83521775", // LINK/AVAX
-    functionsRouter: "0xA9d587a00A31A52Ed70D6026794a8FC5E2F5dCb0",
-    donId: "fun-avalanche-fuji-1",
-    gatewayUrls: [
-      "https://01.functions-gateway.testnet.chain.link/",
-      "https://02.functions-gateway.testnet.chain.link/",
-    ],
   }
 };
 
