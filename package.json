@@ -4,7 +4,7 @@
         "name": "Zubin Pratap"
     },
     "scripts": {
-        "listen": "nodemon scripts/06_listen.ts"
+        "listen": "nodemon listen.js"
     },
     "dependencies": {
         "@chainlink/contracts": "^0.8.0",
