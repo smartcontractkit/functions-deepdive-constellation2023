@@ -31,23 +31,18 @@ console.log(
 );
 // Listen for response
 responseListener.listenForResponses(subscriptionId, response => {
-
   if (!response.errorString) {
     console.log(
       "\nFunctions response decodes to a string value of: ",
-      decodeResult(response.responseBytesHexstring, ReturnType.string),
+      decodeResult(response.responseBytesHexstring, ReturnType.string)
     );
   } else {
-    console.log(
-      "\nError during the execution: ",
-      response.errorString,
-    );
+    console.log("\nError during the execution: ", response.errorString);
   }
 });
 
 // Remove existing listeners
 process.on("SIGINT", () => {
-    console.log("\nRemoving existing listeners...");
-    responseListener.stopListeningForResponses();
-  });
-
+  console.log("\nRemoving existing listeners...");
+  responseListener.stopListeningForResponses();
+});
