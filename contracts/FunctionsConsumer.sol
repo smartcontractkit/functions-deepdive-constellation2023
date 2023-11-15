@@ -11,14 +11,14 @@ import {FunctionsRequest} from "@chainlink/contracts/src/v0.8/functions/dev/v1_0
 contract FunctionsConsumer is FunctionsClient, ConfirmedOwner {
   using FunctionsRequest for FunctionsRequest.Request;
 
-  bytes32 public donId; // DON ID for the Functions DON to which the requests are sent
+  bytes32 public s_donId; // DON ID for the Functions DON to which the requests are sent
 
   bytes32 public s_lastRequestId;
   bytes public s_lastResponse;
   bytes public s_lastError;
 
   constructor(address router, bytes32 _donId) FunctionsClient(router) ConfirmedOwner(msg.sender) {
-    donId = _donId;
+    s_donId = _donId;
   }
 
   /**
@@ -26,7 +26,7 @@ contract FunctionsConsumer is FunctionsClient, ConfirmedOwner {
    * @param newDonId New DON ID
    */
   function setDonId(bytes32 newDonId) external onlyOwner {
-    donId = newDonId;
+    s_donId = newDonId;
   }
 
   /**
@@ -58,7 +58,7 @@ contract FunctionsConsumer is FunctionsClient, ConfirmedOwner {
     if (bytesArgs.length > 0) {
       req.setBytesArgs(bytesArgs);
     }
-    s_lastRequestId = _sendRequest(req.encodeCBOR(), subscriptionId, callbackGasLimit, donId);
+    s_lastRequestId = _sendRequest(req.encodeCBOR(), subscriptionId, callbackGasLimit, s_donId);
   }
 
   /**
