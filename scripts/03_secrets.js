@@ -6,7 +6,6 @@ const { signer } = require("../connection.js");
 const { networks } = require("../networks.js");
 
 require("@chainlink/env-enc").config();
-// require('dotenv').config()
 
 const NETWORK = "polygonMumbai";
 
@@ -46,18 +45,20 @@ const encryptAndUploadSecrets = async () => {
     minutesUntilExpiration,
   });
 
-  if (success){
-    console.log("\nUploaded secrets to DON...")
-    const encryptedSecretsReference =  secretsManager.buildDONHostedEncryptedSecretsReference({
+  if (success) {
+    console.log("\nUploaded secrets to DON...");
+    const encryptedSecretsReference =
+      secretsManager.buildDONHostedEncryptedSecretsReference({
         slotId,
-        version
-    })
+        version,
+      });
 
-    console.log(`\nMake a note of the encryptedSecretsReference: ${encryptedSecretsReference} `)
+    console.log(
+      `\nMake a note of the encryptedSecretsReference: ${encryptedSecretsReference} `,
+    );
   }
-
 };
 
-encryptAndUploadSecrets().catch(err => {
+encryptAndUploadSecrets().catch((err) => {
   console.log("Error encrypting and uploading secrets:  ", err);
 });

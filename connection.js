@@ -1,9 +1,8 @@
 require("@chainlink/env-enc").config();
-// require('dotenv').config()
 
 const { providers, Wallet } = require("ethers");
 
-const RPC_URL = process.env.RPC_URL;
+const RPC_URL = process.env.POLYGON_MUMBAI_RPC_URL;
 
 if (!RPC_URL) {
   throw new Error("Please set the RPC_URL environment variable");

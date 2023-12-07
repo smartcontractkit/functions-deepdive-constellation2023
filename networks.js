@@ -1,5 +1,4 @@
-require("@chainlink/env-enc").config()
-// require('dotenv').config()
+require("@chainlink/env-enc").config();
 
 const DEFAULT_VERIFICATION_BLOCK_CONFIRMATIONS = 2;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
@@ -38,7 +37,7 @@ const networks = {
       "https://01.functions-gateway.testnet.chain.link/",
       "https://02.functions-gateway.testnet.chain.link/",
     ],
-  }
+  },
 };
 
 module.exports = {

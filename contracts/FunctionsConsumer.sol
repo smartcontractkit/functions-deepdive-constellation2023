@@ -42,7 +42,7 @@ contract FunctionsConsumer is FunctionsClient, ConfirmedOwner {
   function sendRequest(
     string calldata source,
     FunctionsRequest.Location secretsLocation,
-    bytes calldata encryptedSecretsReference,
+    // bytes calldata encryptedSecretsReference,
     string[] calldata args,
     bytes[] calldata bytesArgs,
     uint64 subscriptionId,
@@ -51,7 +51,7 @@ contract FunctionsConsumer is FunctionsClient, ConfirmedOwner {
     FunctionsRequest.Request memory req; // Struct API reference: https://docs.chain.link/chainlink-functions/api-reference/functions-request
     req.initializeRequest(FunctionsRequest.Location.Inline, FunctionsRequest.CodeLanguage.JavaScript, source);
     req.secretsLocation = secretsLocation;
-    req.encryptedSecretsReference = encryptedSecretsReference;
+    // req.encryptedSecretsReference = encryptedSecretsReference;
     if (args.length > 0) {
       req.setArgs(args);
     }
