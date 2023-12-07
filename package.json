@@ -4,7 +4,7 @@
     "name": "Zubin Pratap"
   },
   "scripts": {
-    "deploy": "nodemon scripts/01_deployConsumer.ts",
+    "deploy": "node scripts/01_deployConsumer.ts",
     "listen": "nodemon scripts/06_listen.ts"
   },
   "dependencies": {
